@@ -6,11 +6,11 @@ public class ConditionalStatement {
 		}
 
 		boolean male = true;
-		if (male == true) {
+		if (male) {
 			System.out.println("Man");
 		}
 
-		if (!male == true) {
+		if (!male) {
 			System.out.println("Woman");
 		}
 
