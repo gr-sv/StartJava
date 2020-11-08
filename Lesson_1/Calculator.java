@@ -3,19 +3,19 @@ public class Calculator {
 		int a = 15;
 		int b = 3;
 		int result = 0;
-		char c = '+';
+		char sign = '+';
 
-		if (c == '+') {
+		if (sign == '+') {
 			result = a + b;
-		} else if (c == '-') {
+		} else if (sign == '-') {
 			result = a - b;
-		} else if (c == '*') {
+		} else if (sign == '*') {
 			result = a * b;
-		} else if (c == '/') {
+		} else if (sign == '/') {
 			result = a / b;
-		} else if (c == '%') {
+		} else if (sign == '%') {
 			result = a % b;
-		} else if (c == '^') {
+		} else if (sign == '^') {
 			if (b == 1) {
 				result = a;
 			} else {
@@ -28,6 +28,6 @@ public class Calculator {
 			System.out.println("Oops! Unknown operation: ");
 		}
 
-		System.out.println(a + " " + c + " " + b + " = " + result);
+		System.out.println(a + " " + sign + " " + b + " = " + result);
 	}
 }
