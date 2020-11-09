@@ -3,7 +3,7 @@ public class Calculator {
 		int a = 15;
 		int b = 3;
 		int result = 0;
-		char sign = '+';
+		char sign = '^';
 
 		if (sign == '+') {
 			result = a + b;
@@ -21,7 +21,7 @@ public class Calculator {
 			} else {
 				result = a;
 				for (int i = 2; i <= b; i++) {
-					result = result * a;
+					result *= a;
 				}
 			}
 		} else {
