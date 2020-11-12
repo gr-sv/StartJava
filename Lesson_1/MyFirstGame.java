@@ -3,20 +3,20 @@ public class MyFirstGame {
 		int compNumber = 38;
 		int myNumber = 45;
 
-		if (0 <= myNumber && myNumber <= 100) {
+		if (myNumber >= 0 && myNumber <= 100) {
 			System.out.println("Играем!");
 
 			if (myNumber > compNumber) {
 				while (myNumber > compNumber) {
 					System.out.println("Ваше число больше, чем число, которое загадал компьютер.");
-					myNumber --;
+					myNumber--;
 				}
 			}
 
 			if (myNumber < compNumber) {
 				while (myNumber < compNumber) {
 					System.out.println("Ваше число меньше, чем число, которое загадал компьютер.");
-					myNumber ++;
+					myNumber++;
 				}
 			}
 
