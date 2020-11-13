@@ -1,7 +1,7 @@
 public class Calculator {
 	public static void main(String[] args) {
 		int a = 15;
-		int b = 3;
+		int b = 2;
 		int result = 0;
 		char sign = '^';
 
@@ -16,7 +16,9 @@ public class Calculator {
 		} else if (sign == '%') {
 			result = a % b;
 		} else if (sign == '^') {
-			if (b == 1) {
+			if (b == 0) {
+				result = 1;
+			} else if (b == 1) {
 				result = a;
 			} else {
 				result = a;
