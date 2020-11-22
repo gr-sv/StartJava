@@ -2,7 +2,6 @@ public class Person {
 
 	String gender = "male";
 	String name = "Sergey";
-
 	int height = 184;
 	int weight = 73;
 	int age = 35;
@@ -24,8 +23,8 @@ public class Person {
 		return true;
 	}
 
-	boolean learn() {
-		System.out.println("Вы можете что-то выучили.");
+	boolean learnJava() {
+		System.out.println("Вы что-то выучили.");
 		return true;
 	}
 }
