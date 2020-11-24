@@ -1,8 +1,9 @@
 public class Wolf {
-	String gender = "male";
-	String name = "Ferdinand";
-	String color = "grey";
-	int weight = 55;
+	String gender;
+	String name;
+	String color;
+	int weight;
+	int age;
 
 	void go() {
 		System.out.println("Волк прошел 10 м.");
@@ -24,5 +25,4 @@ public class Wolf {
 		System.out.println("Волк выл на луну.");
 		return true;
 	}
-
 }
