@@ -74,33 +74,33 @@ public class CalculatorMod {
 
 	public int mathResult() {
 		switch(sign) {
-		case '+':
-			mathSum();
-			break;
+			case '+':
+				mathSum();
+				break;
 
-		case '-':
-			mathSub();
-			break;
+			case '-':
+				mathSub();
+				break;
 
-		case '*':
-			mathMult();
-			break;
+			case '*':
+				mathMult();
+				break;
 
-		case '/':
-			mathDiv();
-			break;
+			case '/':
+				mathDiv();
+				break;
 
-		case '%':
-			mathRemOfDiv();
-			break;
+			case '%':
+				mathRemOfDiv();
+				break;
 
-		case '^':
-			mathExp();
-			break;
+			case '^':
+				mathExp();
+				break;
 
-		default:
-			System.out.println("Oops! Unknown operation!");
-			result = 0;
+			default:
+				System.out.println("Oops! Unknown operation!");
+				result = 0;
 		}
 		return result;
 	}
