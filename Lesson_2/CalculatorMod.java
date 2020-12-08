@@ -7,6 +7,7 @@ public class CalculatorMod {
 	public int getA() {
 		return a;
 	}
+
 	public void setA(int a) {
 		this.a = a;
 	}
@@ -14,6 +15,7 @@ public class CalculatorMod {
 	public int getB() {
 		return b;
 	}
+
 	public void setB(int b) {
 		this.b = b;
 	}
@@ -21,6 +23,7 @@ public class CalculatorMod {
 	public int getResult() {
 		return result;
 	}
+
 	public void setResult(int result) {
 		this.result = result;
 	}
@@ -28,74 +31,44 @@ public class CalculatorMod {
 	public char getSign() {
 		return sign;
 	}
+
 	public void setSign(char sign) {
 		this.sign = sign;
 	}
 
-
-	public int mathSum() {
-		result = a + b;
-		return result;
-	}
-
-	public int mathSub() {
-		result = a - b;
-		return result;
-	}
-
-	public int mathMult() {
-		result = a * b;
-		return result;
-	}
-
-	public int mathDiv() {
-		result = a / b;
-		return result;
-	}
-
-	public int mathRemOfDiv() {
-		result = a % b;
-		return result;
-	}
-
-	public int mathExp() {
-		if(b == 0) {
-			result = 1;
-		} else if(b == 1) {
-			result = a;
-		} else {
-			result = a;
-			for (int i = 2; i <= b; i++) {
-				result *= a;
-			}
-		}
-		return result;
-	}
-
-	public int mathResult() {
+	public int calculate() {
 		switch(sign) {
 			case '+':
-				mathSum();
+				result = a + b;
 				break;
 
 			case '-':
-				mathSub();
+				result = a - b;
 				break;
 
 			case '*':
-				mathMult();
+				result = a * b;
 				break;
 
 			case '/':
-				mathDiv();
+				result = a / b;
 				break;
 
 			case '%':
-				mathRemOfDiv();
+				result = a % b;
 				break;
 
 			case '^':
-				mathExp();
+				if (b == 0) {
+					result = 1;
+				} else if (b == 1) {
+					result = a;
+				} else {
+					result = a;
+					for (int i = 2; i <= b; i++) {
+						result *= a;
+					}
+				}
 				break;
 
 			default:

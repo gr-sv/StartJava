@@ -4,8 +4,7 @@ public class CalculatorModTest {
 	public static void main(String[] args) {
 		CalculatorMod calcMod = new CalculatorMod ();
 		Scanner sc = new Scanner(System.in);
-		String yesOrNo;
-
+		String userAnswer;
 
 		do {
 			System.out.println("Введите первое число");
@@ -17,7 +16,7 @@ public class CalculatorModTest {
 			System.out.println("Введите второе число");
 			calcMod.setB(sc.nextInt());
 
-			calcMod.mathResult();
+			calcMod.calculate();
 
 			System.out.println("Результат: " + calcMod.getA() + " " + calcMod.getSign() + " " + calcMod.getB() + " = " + calcMod.getResult());
 
@@ -25,13 +24,11 @@ public class CalculatorModTest {
 
 			do {
 				System.out.println("Хотите продолжить вычисления? [да/нет]");
-				yesOrNo = sc.nextLine();
-			} while (!yesOrNo.equals("да") && !yesOrNo.equals("нет"));
+				userAnswer = sc.nextLine();
+			} while (!userAnswer.equals("да") && !userAnswer.equals("нет"));
+		} while (userAnswer.equals("да"));
 
-			if (yesOrNo.equals("нет")) {
-				System.out.println("The end.");
-			}
-		} while (yesOrNo.equals("да"));
+		System.out.println("The end.");
 	}
 }
 
