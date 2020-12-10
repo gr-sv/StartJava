@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class CalculatorModTest {
 	public static void main(String[] args) {
-		CalculatorMod calcMod = new CalculatorMod ();
+		CalculatorMod calcMod = new CalculatorMod();
 		Scanner sc = new Scanner(System.in);
 		String userAnswer;
 
@@ -17,9 +17,7 @@ public class CalculatorModTest {
 			calcMod.setB(sc.nextInt());
 
 			calcMod.calculate();
-
-			System.out.println("Результат: " + calcMod.getA() + " " + calcMod.getSign() + " " + calcMod.getB() + " = " + calcMod.getResult());
-
+			System.out.println("Результат: " + calcMod.getA() + " " + calcMod.getSign() + " " + calcMod.getB() + " = " + calcMod.calculate());
 			sc.nextLine();
 
 			do {

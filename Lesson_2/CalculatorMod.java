@@ -24,10 +24,6 @@ public class CalculatorMod {
 		return result;
 	}
 
-	public void setResult(int result) {
-		this.result = result;
-	}
-
 	public char getSign() {
 		return sign;
 	}
@@ -41,23 +37,18 @@ public class CalculatorMod {
 			case '+':
 				result = a + b;
 				break;
-
 			case '-':
 				result = a - b;
 				break;
-
 			case '*':
 				result = a * b;
 				break;
-
 			case '/':
 				result = a / b;
 				break;
-
 			case '%':
 				result = a % b;
 				break;
-
 			case '^':
 				if (b == 0) {
 					result = 1;
@@ -70,7 +61,6 @@ public class CalculatorMod {
 					}
 				}
 				break;
-
 			default:
 				System.out.println("Oops! Unknown operation!");
 				result = 0;
