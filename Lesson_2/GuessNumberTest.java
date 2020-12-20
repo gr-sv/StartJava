@@ -7,46 +7,29 @@ public class GuessNumberTest {
 		Random random = new Random();
 		String userAnswer;
 
-		System.out.println("Введите имя первого игрока.");
+		System.out.println("Введите имя игока Player1.");
 		Player player1 = new Player(sc.nextLine());
 
-		System.out.println("Введите имя второго игрока.");
+		System.out.println("Введите имя игрока Player2.");
 		Player player2 = new Player(sc.nextLine());
 
 		do {
 			System.out.println("Компьютер загадал число. Попробуйте его угадать.");
-			GuessNumber gameStart = new GuessNumber(random.nextInt(100) + 1);
+			GuessNumber newGame = new GuessNumber(random.nextInt(100) + 1);
+
+			newGame.setPlayer1(player1.getName());
+			newGame.setPlayer2(player2.getName());
+
+			newGame.setNumber1(player1.getNumber());
+			newGame.setNumber2(player2.getNumber());
+
+			newGame.Game();
 
 			do {
-				System.out.println(player1.getName() + " загадайте число от 1 до 100:");
-				player1.setMyNumber(sc.nextInt());
-
-				System.out.println(player2.getName() + " загадайте число  от 1 до 100:");
-				player2.setMyNumber(sc.nextInt());
-
-				gameStart.setMyNumber(player1.getMyNumber());
-				System.out.println(player1.getName());
-				gameStart.Game();
-
-				gameStart.setMyNumber(player2.getMyNumber());
-				System.out.println(player2.getName());
-				gameStart.Game();
-
-			} while (player1.getMyNumber() != gameStart.getCompNumber() && player2.getMyNumber() != gameStart.getCompNumber());
-
-			if (player1.getMyNumber() == gameStart.getCompNumber()) {
-				System.out.println(player1.getName() + ", поздравляем! Вы выиграли!!!");
-			} else if (player2.getMyNumber() == gameStart.getCompNumber()) {
-				System.out.println(player2.getName() + ", поздравляем! Вы выиграли!!!");
-			}
-			sc.nextLine();
-
-			do {
-				System.out.println("Хотите продолжить игру? [да/нет]");
+				System.out.println("Хотите продолжить игру? [yes/no]");
 				userAnswer = sc.nextLine();
-			} while (!userAnswer.equals("да") && !userAnswer.equals("нет"));
-		} while (userAnswer.equals("да"));
-
+			} while (!userAnswer.equals("yes") && !userAnswer.equals("no"));
+		} while (userAnswer.equals("yes"));
 		System.out.println("The end.");
 	}
 }
