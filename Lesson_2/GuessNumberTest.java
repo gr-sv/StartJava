@@ -7,7 +7,7 @@ public class GuessNumberTest {
 		Random random = new Random();
 		String userAnswer;
 
-		System.out.println("Введите имя игока Player1.");
+		System.out.println("Введите имя игрока Player1.");
 		Player player1 = new Player(sc.nextLine());
 
 		System.out.println("Введите имя игрока Player2.");
