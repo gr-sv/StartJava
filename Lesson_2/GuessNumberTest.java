@@ -7,12 +7,12 @@ public class GuessNumberTest {
 		Random random = new Random();
 		String userAnswer;
 
-		do {
+		do{
 			GuessNumber game = new GuessNumber(random.nextInt(100) + 1);
 
 			game.play();
 
-			do {
+			do{
 				System.out.println("Хотите продолжить игру? [yes/no]");
 				userAnswer = sc.nextLine();
 			} while (!userAnswer.equals("yes") && !userAnswer.equals("no"));

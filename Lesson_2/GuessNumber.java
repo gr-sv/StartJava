@@ -17,32 +17,31 @@ public class GuessNumber {
 			Player player2 = new Player(sc.nextLine(), 0);
 
 			System.out.println("Компьютер загадал число. Попробуйте его угадать.");
-			
-		do{
+
+		while (player1.getNumber() != compNumber && player2.getNumber() != compNumber) {
 			System.out.println(player1.getName() + ", загадайте число от 1 до 100:");
 			player1.setNumber(sc.nextInt());
+
+			if (player1.getNumber() > compNumber) {
+				System.out.println(player1.getName() + ", Ваше число " + player1.getNumber() + " больше, чем число, которое загадал компьютер. Попробуйте еще раз.");
+			} else if (player1.getNumber() < compNumber) {
+				System.out.println(player1.getName() + ", Ваше число " + player1.getNumber() + " меньше, чем число, которое загадал компьютер. Попробуйте еще раз.");
+			} else if (player1.getNumber() == compNumber) {
+				System.out.println(player1.getName() + ", You win!!!");
+				break;
+			}
 
 			System.out.println(player2.getName() + ", загадайте число  от 1 до 100:");
 			player2.setNumber(sc.nextInt());
 
-			if (player1.getNumber() > compNumber) {
-				System.out.println(player1.getName() + ", Ваше число " + player1.getNumber() + " больше, чем число, которое загадал компьютер. Попробуйте еще раз.");
-			}
-			if (player1.getNumber() < compNumber) {
-				System.out.println(player1.getName() + ", Ваше число " + player1.getNumber() + " меньше, чем число, которое загадал компьютер. Попробуйте еще раз.");
-			}
 			if (player2.getNumber() > compNumber) {
 				System.out.println(player2.getName() + ", Ваше число " + player2.getNumber() + " больше, чем число, которое загадал компьютер. Попробуйте еще раз.");
-			}
-			if (player2.getNumber() < compNumber) {
+			} else if (player2.getNumber() < compNumber) {
 				System.out.println(player2.getName() + ", Ваше число " + player2.getNumber() + " меньше, чем число, которое загадал компьютер. Попробуйте еще раз.");
+			} else if (player2.getNumber() == compNumber) {
+				System.out.println(player2.getName() + ", You win!!!");
+				break;
 			}
-		} while (player1.getNumber() != compNumber && player2.getNumber() != compNumber);
-
-		if (player1.getNumber() == compNumber) {
-			System.out.println(player1.getName() + ", You win!!!");
-		} else if (player2.getNumber() == compNumber) {
-			System.out.println(player2.getName() + ", You win!!!");
 		}
 	}
 }
