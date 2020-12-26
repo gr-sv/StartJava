@@ -18,7 +18,7 @@ public class GuessNumber {
 
 			System.out.println("Компьютер загадал число. Попробуйте его угадать.");
 
-		while (player1.getNumber() != compNumber && player2.getNumber() != compNumber) {
+		do{
 			System.out.println(player1.getName() + ", загадайте число от 1 до 100:");
 			player1.setNumber(sc.nextInt());
 
@@ -42,6 +42,6 @@ public class GuessNumber {
 				System.out.println(player2.getName() + ", You win!!!");
 				break;
 			}
-		}
+		} while (player1.getNumber() != compNumber && player2.getNumber() != compNumber);
 	}
 }
