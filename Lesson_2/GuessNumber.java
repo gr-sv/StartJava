@@ -1,13 +1,11 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class GuessNumber {
 	Scanner sc = new Scanner(System.in);
+	Random random = new Random();
 
 	private int compNumber;
-
-	public GuessNumber(int compNumber) {
-		this.compNumber = compNumber;
-	}
 
 	public void play() {
 			System.out.println("Введите имя первого игрока.");
@@ -17,8 +15,9 @@ public class GuessNumber {
 			Player player2 = new Player(sc.nextLine(), 0);
 
 			System.out.println("Компьютер загадал число. Попробуйте его угадать.");
+			compNumber = random.nextInt(100) + 1;
 
-		do{
+		while (player1.getNumber() != compNumber && player2.getNumber() != compNumber) {
 			System.out.println(player1.getName() + ", загадайте число от 1 до 100:");
 			player1.setNumber(sc.nextInt());
 
@@ -42,6 +41,6 @@ public class GuessNumber {
 				System.out.println(player2.getName() + ", You win!!!");
 				break;
 			}
-		} while (player1.getNumber() != compNumber && player2.getNumber() != compNumber);
+		}
 	}
 }
