@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.person;
+
 public class Person {
 
 	String gender = "male";
@@ -7,19 +9,19 @@ public class Person {
 	int age = 35;
 
 	void move() {
-		System.out.println("Вы прошли 5 шагов.");
+		System.out.println("Вы идете.");
 	}
 
 	void sit() {
-		System.out.println("Вы сидели 10 мин.");
+		System.out.println("Вы сидите.");
 	}
 
 	void run() {
-		System.out.println("Вы пробежали 100 метров.");
+		System.out.println("Вы бежите.");
 	}
 
 	boolean speak() {
-		System.out.println("Вы говорили.");
+		System.out.println("Вы говорите.");
 		return true;
 	}
 
