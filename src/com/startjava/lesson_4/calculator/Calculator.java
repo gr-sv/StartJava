@@ -7,8 +7,6 @@ public class Calculator {
     private char sign;
     private int result;
 
-    char[] signs = {'+', '-', '*', '/', '%', '^'};
-
     public void setExpression(String expression) {
         this.expression = expression;
     }
@@ -25,24 +23,38 @@ public class Calculator {
         return sign;
     }
 
-    public int calculate() {
-        String[] part = expression.split("");
-        a = Integer.parseInt(part[0]);
-        b = Integer.parseInt(part[2]);
-        sign = expression.charAt(1);
+    public int getResult() {
+        return result;
+    }
 
-        if (sign == signs[0]) {
-            result = a + b;
-        } else if (sign == signs[1]) {
-            result = a - b;
-        } else if (sign == signs[2]) {
-            result = a * b;
-        } else if (sign == signs[3]) {
-            result = a / b;
-        } else if(sign == signs[4]) {
-            result = (int) Math.IEEEremainder(a, b);
-        } else if(sign == signs[5]) {
-            result = (int) Math.pow(a, b);
+    public int calculate() {
+        String[] parts = expression.split(" ");
+        a = Integer.parseInt(parts[0]);
+        b = Integer.parseInt(parts[2]);
+        sign = expression.charAt(2);
+
+        switch(sign) {
+            case '+':
+                result = a + b;
+                break;
+            case '-':
+                result = a - b;
+                break;
+            case '*':
+                result = a * b;
+                break;
+            case '/':
+                result = a / b;
+                break;
+            case '%':
+                result = (int) Math.IEEEremainder(a, b);
+                break;
+            case '^':
+                result = (int) Math.pow(a, b);
+                break;
+            default:
+                System.out.println("Oops! Unknown operation!");
+                break;
         }
         return result;
     }

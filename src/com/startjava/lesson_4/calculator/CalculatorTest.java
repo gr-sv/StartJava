@@ -13,7 +13,7 @@ public class CalculatorTest {
             calc.setExpression(scan.nextLine());
 
             calc.calculate();
-            System.out.println("Результат: " + calc.getA() + " " + calc.getSign() + " " + calc.getB() + " = " + calc.calculate());
+            System.out.println("Результат: " + calc.getA() + " " + calc.getSign() + " " + calc.getB() + " = " + calc.getResult());
 
             do {
                 System.out.println("Хотите продолжить вычисления? [yes]/[no]");
