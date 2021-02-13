@@ -5,26 +5,9 @@ public class Calculator {
     private int a;
     private int b;
     private char sign;
-    private int result;
 
     public void setExpression(String expression) {
         this.expression = expression;
-    }
-
-    public int getA() {
-        return a;
-    }
-
-    public int getB() {
-        return b;
-    }
-
-    public char getSign() {
-        return sign;
-    }
-
-    public int getResult() {
-        return result;
     }
 
     public int calculate() {
@@ -35,28 +18,20 @@ public class Calculator {
 
         switch(sign) {
             case '+':
-                result = a + b;
-                break;
+                return a + b;
             case '-':
-                result = a - b;
-                break;
+                return a - b;
             case '*':
-                result = a * b;
-                break;
+                return a * b;
             case '/':
-                result = a / b;
-                break;
+                return a / b;
             case '%':
-                result = (int) Math.IEEEremainder(a, b);
-                break;
+                return (int) Math.IEEEremainder(a, b);
             case '^':
-                result = (int) Math.pow(a, b);
-                break;
+                return (int) Math.pow(a, b);
             default:
                 System.out.println("Oops! Unknown operation!");
-                break;
         }
-        return result;
     }
 }
 
