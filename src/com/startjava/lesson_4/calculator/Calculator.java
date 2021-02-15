@@ -30,7 +30,8 @@ public class Calculator {
             case '^':
                 return (int) Math.pow(a, b);
             default:
-                System.out.println("Oops! Unknown operation!");
+                System.out.println("Oops!");
+                return 0;
         }
     }
 }
