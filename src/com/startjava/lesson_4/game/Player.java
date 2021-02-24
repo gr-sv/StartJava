@@ -4,7 +4,7 @@ public class Player {
     private String name;
     private int number;
 
-    private int[] playerNumbers = new int[10];
+    private int[] numbers = new int[10];
 
     public Player(String name) {
         this.name = name;
@@ -22,12 +22,7 @@ public class Player {
         this.number = number;
     }
 
-    public int[] getPlayerNumbers() {
-        return playerNumbers;
+    public int[] getNumbers() {
+        return numbers;
     }
-
-    public void setPlayerNumbers(int[] playerNumbers) {
-        this.playerNumbers = playerNumbers;
-    }
-
 }
