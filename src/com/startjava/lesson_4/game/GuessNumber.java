@@ -25,18 +25,18 @@ public class GuessNumber {
 
         for(int i = 0; i < player1.getNumbers().length; i++) {
             System.out.println(player1.getName() + ", загадайте число от 1 до 100:");
-            player1.setNumber(sc.nextInt());
 
-            numbers1 = player1.getNumbers();
-            numbers1[i] = player1.getNumber();
+            player1.setNumbers(i, sc.nextInt());
+            System.out.println("Игрок1 число i: " + player1.getNumbers()[i]); // проверка числа
 
-            numbers1 = Arrays.copyOf(numbers1, (i + 1));
+            numbers1 = Arrays.copyOf(player1.getNumbers(), (i + 1));
+            System.out.println("Игрок1 массив: " + Arrays.toString(numbers1)); // проверка массива
 
-            if (player1.getNumber() > secretNumber) {
-                System.out.println(player1.getName() + ", Ваше число " + player1.getNumber() + " больше, чем число, которое загадал компьютер. Попробуйте еще раз.");
-            } else if (player1.getNumber() < secretNumber) {
-                System.out.println(player1.getName() + ", Ваше число " + player1.getNumber() + " меньше, чем число, которое загадал компьютер. Попробуйте еще раз.");
-            } else if (player1.getNumber() == secretNumber) {
+            if (player1.getNumbers()[i] > secretNumber) {
+                System.out.println(player1.getName() + ", Ваше число " + player1.getNumbers()[i] + " больше, чем число, которое загадал компьютер. Попробуйте еще раз.");
+            } else if (player1.getNumbers()[i] < secretNumber) {
+                System.out.println(player1.getName() + ", Ваше число " + player1.getNumbers()[i] + " меньше, чем число, которое загадал компьютер. Попробуйте еще раз.");
+            } else if (player1.getNumbers()[i] == secretNumber) {
                 System.out.println(player1.getName() + ", You win!!!");
                 System.out.println("Игрок " + player1.getName() + " угадал число с " + (i + 1) + " попытки");
                 break;
@@ -47,18 +47,18 @@ public class GuessNumber {
             }
 
             System.out.println(player2.getName() + ", загадайте число  от 1 до 100:");
-            player2.setNumber(sc.nextInt());
 
-            numbers2 = player2.getNumbers();
-            numbers2[i] = player2.getNumber();
+            player2.setNumbers(i, sc.nextInt());
+            System.out.println("Игрок2 число i: " + player2.getNumbers()[i]); // проверка числа
 
-            numbers2 = Arrays.copyOf(numbers2, (i + 1));
+            numbers2 = Arrays.copyOf(player2.getNumbers(), (i + 1));
+            System.out.println("Игрок2 массив: " + Arrays.toString(numbers2)); // проверка массива
 
-            if (player2.getNumber() > secretNumber) {
-                System.out.println(player2.getName() + ", Ваше число " + player2.getNumber() + " больше, чем число, которое загадал компьютер. Попробуйте еще раз.");
-            } else if (player2.getNumber() < secretNumber) {
-                System.out.println(player2.getName() + ", Ваше число " + player2.getNumber() + " меньше, чем число, которое загадал компьютер. Попробуйте еще раз.");
-            } else if (player2.getNumber() == secretNumber) {
+            if (player2.getNumbers()[i] > secretNumber) {
+                System.out.println(player2.getName() + ", Ваше число " + player2.getNumbers()[i] + " больше, чем число, которое загадал компьютер. Попробуйте еще раз.");
+            } else if (player2.getNumbers()[i] < secretNumber) {
+                System.out.println(player2.getName() + ", Ваше число " + player2.getNumbers()[i] + " меньше, чем число, которое загадал компьютер. Попробуйте еще раз.");
+            } else if (player2.getNumbers()[i] == secretNumber) {
                 System.out.println(player2.getName() + ", You win!!!");
                 System.out.println("Игрок " + player2.getName() + " угадал число с " + (i + 1) + " попытки");
                 break;
@@ -68,14 +68,24 @@ public class GuessNumber {
                 System.out.println("Игрок " + player2.getName() + ", Ваши попытки закончились.");
             }
         }
-        System.out.println("Игрок " + player1.getName() + ": " + Arrays.toString(numbers1));
-        System.out.println("Игрок " + player2.getName() + ": " + Arrays.toString(numbers2));
-    }
 
-    public void resetOfNumbers() {
+        System.out.print("Игрок " + player1.getName() + ": ");
+        for (int i : numbers1) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        System.out.print("Игрок " + player2.getName() + ": ");
+        for (int i : numbers2) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
         Arrays.fill(numbers1,0);
         Arrays.fill(numbers2, 0);
-        System.out.println("Игрок " + player1.getName() + ": " + Arrays.toString(numbers1));
-        System.out.println("Игрок " + player2.getName() + ": " + Arrays.toString(numbers2));
+
+        // проверка обнуления массива:
+        System.out.println("Игрок1: " + Arrays.toString(numbers1));
+        System.out.println("Игрок2: " + Arrays.toString(numbers2));
     }
 }
